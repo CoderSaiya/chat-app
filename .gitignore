@@ -34,3 +34,82 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# .gitignore for .NET projects and JetBrains Rider
+
+# Build Folders
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.vcxproj.user
+*.vcxproj.filters
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+*.dotCover
+_ReSharper*/
+*.DotSettings.user
+*.DotSettings
+
+# Compiled source
+*.dll
+*.exe
+*.app
+*.so
+*.dylib
+*.pdb
+
+# NuGet
+packages/
+*.nupkg
+.nuget/packages/
+
+# Rider caches
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# User-specific files
+*.rsuser
+*.usbpkgr
+
+# Log files
+*.log
+
+# Test results
+TestResults/
+*.trx
+
+# Temporary files
+*.tmp
+*.temp
+
+# Publish folder
+publish/
+
+# JetBrains Rider plugin configs
+.idea/httpRequests
+.idea/httpRequestsWorkbench.xml
+
+# Resharper
+*.ReSharper.Settings
+*/.ReSharper*/
+
+# Others
+*.vsix
+.idea/plugins.xml
