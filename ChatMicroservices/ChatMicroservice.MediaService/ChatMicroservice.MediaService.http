@@ -1,0 +1,6 @@
+@ChatMicroservice.MediaService_HostAddress = http://localhost:5012
+
+GET {{ChatMicroservice.MediaService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
