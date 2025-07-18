@@ -12,6 +12,7 @@ public class UserDbContext(DbContextOptions<UserDbContext> options) : DbContext(
     {
         base.OnModelCreating(modelBuilder);
 
+        // Constrains
         modelBuilder.Entity<User>(entity =>
         {
             entity.HasKey(u => u.Id);
@@ -27,6 +28,7 @@ public class UserDbContext(DbContextOptions<UserDbContext> options) : DbContext(
             entity.Property(u => u.Email)
                 .HasMaxLength(255);
 
+            // Relations
             entity.OwnsOne(u => u.Profile, profile =>
             {
                 profile.Property(p => p.FullName)
