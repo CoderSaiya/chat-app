@@ -1,4 +1,5 @@
-﻿using ChatMicroservice.Shared.Common;
+using System.ComponentModel.DataAnnotations;
+using ChatMicroservice.Shared.Common;
 using UserService.Models.ValueObjects;
 
 namespace UserService.Models;
