@@ -13,5 +13,5 @@ message LoginRequest {
 message UserResponse {
   string id = 1;
   string username = 2;
-  repeated string roles = 3;
+  string role = 3;
 }
