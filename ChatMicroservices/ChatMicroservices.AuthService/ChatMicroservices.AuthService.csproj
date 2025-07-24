@@ -4,11 +4,16 @@
         <TargetFramework>net9.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <RootNamespace>ChatMicroservice.AuthService</RootNamespace>
+        <RootNamespace>AuthService</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Grpc.AspNetCore" Version="2.71.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.7" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.2"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.7" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="9.0.3" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="9.0.3" />
     </ItemGroup>
 
     <ItemGroup>
@@ -16,7 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Services\" />
+        <Protobuf Include="Protos\user.proto" GrpcServices="Client" />
     </ItemGroup>
 
 </Project>
