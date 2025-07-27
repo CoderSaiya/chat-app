@@ -12,7 +12,7 @@ public class UserRepository(UserDbContext context) : GenericRepository<User>(con
         if (filter is not UserFilter f)
             return await base.ListAsync(filter, ct);
 
-        IQueryable<User> query = context.Set<User>().Include(u => u.Profile);
+        IQueryable<User> query = context.Users.Include(u => u.Profile);
 
         if (!string.IsNullOrWhiteSpace(f.Username))
             query = query.Where(u => u.Username.Contains(f.Username));
@@ -44,4 +44,7 @@ public class UserRepository(UserDbContext context) : GenericRepository<User>(con
 
         return await query.ToListAsync(ct);
     }
+
+    public async Task<User?> GetByUsername(string username) =>
+        await context.Users.FirstOrDefaultAsync(u => u.Username == username);
 }

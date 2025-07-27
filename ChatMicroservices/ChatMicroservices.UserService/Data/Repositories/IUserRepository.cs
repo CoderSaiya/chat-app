@@ -1,6 +1,9 @@
-﻿namespace UserService.Data.Repositories;
+﻿using ChatMicroservice.Shared.Persistence.Repositories;
+using UserService.Models;
 
-public interface IUserRepository
+namespace UserService.Data.Repositories;
+
+public interface IUserRepository : IGenericRepository<User>
 {
-    
+    Task<User?> GetByUsername(string username);
 };
