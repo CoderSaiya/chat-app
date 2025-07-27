@@ -2,7 +2,8 @@
 option csharp_namespace = "UserService.Grpc";
 
 service UserValidation {
-  rpc Validate (LoginRequest) returns (UserResponse);
+  rpc Validate(LoginRequest) returns (UserResponse);
+  rpc Register(RegisterRequest) returns (RegisterResponse);
 }
 
 message LoginRequest {
@@ -14,4 +15,16 @@ message UserResponse {
   string id = 1;
   string username = 2;
   string role = 3;
+}
+
+message RegisterRequest {
+  string username = 1;
+  string password = 2;
+  string role = 3;
+}
+
+message RegisterResponse {
+  string id = 1;
+  bool success = 2;
+  string message = 3;
 }

@@ -18,4 +18,19 @@ public class UserValidationService(IUserService userService) : UserValidation.Us
             Role = user.Role.ToString()
         };
     }
+
+    public override async Task<RegisterResponse> Register(RegisterRequest request, ServerCallContext context)
+    {
+        var user = await userService.Create(request.Username, request.Password, request.Role);
+        
+        if (user is null)
+            throw new RpcException(new Status(StatusCode.Unauthenticated, "Invalid info"));
+
+        return new RegisterResponse
+        {
+            Id = user.Id.ToString(),
+            Success = true,
+            Message = "Created successfully"
+        };
+    }
 }
